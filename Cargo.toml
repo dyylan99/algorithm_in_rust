@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 
-
 bit={path="./bit"}
 
+[workspace]
+members = ["bit","string"]

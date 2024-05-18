@@ -3,16 +3,5 @@
 version = 3
 
 [[package]]
-name = "algorithm"
-version = "0.1.0"
-dependencies = [
- "bit",
-]
-
-[[package]]
-name = "bit"
-version = "0.1.0"
-
-[[package]]
 name = "string"
 version = "0.1.0"
