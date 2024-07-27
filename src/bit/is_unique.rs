@@ -1,3 +1,6 @@
+
+
+
 pub fn is_unique(astr: String) -> bool {
     let mut mask = 0;
     //利用位运算，将字符串中的字符映射到一个32位的整数上
