@@ -4,6 +4,7 @@ pub mod bit;
 mod graph;
 mod hashtable;
 mod string;
+mod array;
 
 
 fn main() {
