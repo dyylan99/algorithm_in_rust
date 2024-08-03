@@ -5,6 +5,7 @@ mod graph;
 mod hashtable;
 mod string;
 mod array;
+pub mod dynamic;
 
 
 fn main() {
