@@ -7,16 +7,18 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     let mut left=0;
     let mut right=0;
     let mut res=0;
-    let mut map=HashMap::new();
+    let mut hash_map=HashMap::new();
     let s=s.as_bytes();
-    while right<s.len() {
-        if let Some(&value)=map.get(&s[right]){
-            left=left.max(value+1);
+    while right<s.len(){
+        if let Some(&v)=hash_map.get(&s[right]){
+            //更新左指针
+            left =left.max(v+1)
         }
         res=res.max(right-left+1);
-        map.insert(s[right], right);
+        //将当前遍历的右指针放入map中
+        hash_map.insert(s[right], right);
         right+=1;
-    }
+    } 
     res as i32
 }
 #[test]

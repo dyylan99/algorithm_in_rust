@@ -1,17 +1,12 @@
-use std::collections::HashMap;
-
-
+use std::{collections::HashMap, vec};
 
 pub fn two_sum(nums:Vec<i32>,target:i32)->Vec<i32>{
-    let mut hash_map = HashMap::new();
-    for(index,&num) in nums.iter().enumerate(){
-        let a=target-num;
-        if hash_map.contains_key(&a){
-            return vec![hash_map[&a],index as i32];
+    let mut hash_map=HashMap::new();
+    for i in 0..nums.len(){
+        if let Some(&v)=hash_map.get(&(target-nums[i])){
+            return vec![v as i32,i as i32];
         }
-        else{
-            hash_map.insert(num,index as i32);
-        }
+        hash_map.insert(nums[i],i);
     }
     vec![]
 }
