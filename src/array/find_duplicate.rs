@@ -9,19 +9,17 @@
 //解题核心: 如果数组中有重复的元素，那么数组中一定会有环，我们可以使用快慢指针来解决这个问题
 
 pub fn find_duplicate(nums: Vec<i32>) -> i32 {
-     let mut slow=nums[0] as usize;
-     let mut fast=nums[nums[0] as usize] as usize;
-     loop{
-        if slow==fast {
-            break;
+    let mut slow=nums[0] as usize;
+    let mut fast=nums[nums[0] as usize] as usize;
+        while slow !=fast {
+            slow=nums[slow] as usize;
+            fast=nums[nums[fast] as usize] as usize;
         }
-        slow=nums[slow] as usize;
-        fast=nums[nums[fast] as usize] as usize;
-     }
-     slow=0;
-     while slow!=fast {
-         slow=nums[slow] as usize;
-         fast=nums[fast] as usize;
-     }
-     slow as i32
+        slow=0;
+        while slow!=fast {
+            slow=nums[slow] as usize;
+            fast=nums[fast] as usize;
+        }
+
+    slow as i32
 }
