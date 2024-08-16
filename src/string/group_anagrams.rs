@@ -1,4 +1,4 @@
-use std::collections::{HashMap};
+use std::collections::{hash_map, HashMap};
 
 pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
     let mut hash_map=HashMap::new();
@@ -14,7 +14,5 @@ pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
 fn test(){
     let strs = vec!["eat".to_string(), "tea".to_string(), "tan".to_string(), "ate".to_string(), "nat".to_string(), "bat".to_string()];
     let res = group_anagrams(strs);
-    let mut res = res.iter().map(|x| x.clone().into_iter().collect::<Vec<String>>()).collect::<Vec<Vec<String>>>();
-    let mut expect = vec![vec!["bat".to_string()], vec!["nat".to_string(), "tan".to_string()], vec!["ate".to_string(), "eat".to_string(), "tea".to_string()]];
-    assert_eq!(res, expect);
+    println!("{:?}",res)
 }

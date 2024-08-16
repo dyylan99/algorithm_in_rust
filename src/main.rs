@@ -6,6 +6,7 @@ mod hashtable;
 mod string;
 mod array;
 pub mod dynamic;
+pub mod tree;
 
 
 fn main() {
