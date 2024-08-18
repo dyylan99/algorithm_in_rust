@@ -1,11 +1,11 @@
-use std::cell::RefCell;
-use std::rc::Rc;
+
+use crate::TreeNodeRef;
 
 #[derive(Debug,PartialEq,Eq,Clone)]
 pub struct TreeNode{
     pub val:i32,
-    pub left:Option<Rc<RefCell<TreeNode>>>,
-    pub right:Option<Rc<RefCell<TreeNode>>>,
+    pub left:Option<TreeNodeRef>,
+    pub right:Option<TreeNodeRef>,
 }
 
 
