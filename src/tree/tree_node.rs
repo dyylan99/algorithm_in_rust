@@ -7,8 +7,6 @@ pub struct TreeNode{
     pub left:Option<TreeNodeRef>,
     pub right:Option<TreeNodeRef>,
 }
-
-
 impl TreeNode {
     #[inline]
     pub fn new(val:i32)->Self{
