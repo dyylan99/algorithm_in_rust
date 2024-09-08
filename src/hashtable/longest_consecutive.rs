@@ -1,4 +1,3 @@
-use core::num;
 use std::collections::HashSet;
 
 
@@ -9,20 +8,20 @@ use std::collections::HashSet;
 pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
     let mut res=0;
     let mut set=HashSet::new();
-    for ele in nums.iter() {
-         set.insert(*ele);
+    for num in nums.iter(){
+        set.insert(*num);
     }
-    nums.iter().for_each(|&num|{
-        if !set.contains(&(num-1)){  //为了找到连续数字的最小的那一个, 避免重复
-            let mut cur_len=1;
-            let mut cur_num=num;
-            while set.contains(&(cur_num+1)) {
+    for num in nums.iter(){
+        if !set.contains(&(num-1)) {
+            let mut cur_nums = *num;
+            let mut cur_len = 1;
+            while set.contains(&(&cur_nums+1)) {
+                cur_nums+=1;
                 cur_len+=1;
-                cur_num+=1;
             }
             res=res.max(cur_len);
         }
-    });
+    }
     res
 }
 
